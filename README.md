@@ -12,3 +12,17 @@ Este repositório contém todo o material de apoio para a disciplina de Estrutur
 
 ## Para os Alunos
 Este é um ambiente colaborativo. Sinta-se à vontade para clonar o repositório, sugerir melhorias, e usar o material para aprofundar seus estudos. Sua contribuição é bem-vinda!
+
+## Referências Bibliográficas Obrigatórias
+
+1. ASCENCIO, A. F. G. Estrutura de Dados. São Paulo: Pearson, 2011. 448p.
+2. SZWARCFITER, J. L.; MARKENZON L. Estruturas de Dados e Seus Algoritmos. 3ª ed. Rio de Janeiro: LTC, 2010. 318p.
+3. ZIVIANI, N. Projeto de Algoritmos com Implementações em Java e C++. Thomson Learning, 2006. 642p.
+
+## Referências Bibliográficas Complementares
+
+1. TOSCANI, L. V.; VELOSO, P. A. S. Complexidade de Algoritmos – Vol. 13. 3ª ed. Porto Alegre: Bookman, 2012. 280p.
+2. LOPES, A.; GARCIA, G. Introdução a Programação. Rio de Janeiro: Campus, 2002. 488p.
+3. DEITEL, P.; DEITEL, H. C: Como Programar. 6ª ed. São Paulo: Pearson, 2007. 848p.
+4. TENENBAUM, A. M.; LANGSAM, Y.; AUGENSTEIN, M. J. Estruturas de dados Usando C. São Paulo: Makron Books, 1995. 904p;
+5. MIZRAHI, V. V. Treinamento em Linguagem C. 2ª ed. São Paulo: Prentice-Hall,
