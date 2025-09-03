@@ -1,0 +1,7 @@
+{
+    "markdown.marp.themes": [
+        "https://raw.githubusercontent.com/rnd195/my-marp-themes/refs/heads/live/graph_paper.css",
+        "https://raw.githubusercontent.com/rnd195/my-marp-themes/refs/heads/live/beam.css",
+        "https://raw.githubusercontent.com/rnd195/my-marp-themes/refs/heads/live/gradient.css"    
+    ]
+}

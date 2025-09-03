@@ -477,7 +477,7 @@ Nesta seção, estudamos a estrutura de dados árvore binária.
 > - Realizamos percursos diversos;
 >   - Largura e profundidade;
 
-Quando ao percurso em profundidade, abordamos as travessias em pré-ordem, ordem e pós-ordem.
+Quanto ao percurso em profundidade, abordamos as travessias em pré-ordem, ordem e pós-ordem.
 
 ---
 

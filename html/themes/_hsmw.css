@@ -400,99 +400,27 @@ section.totalpages::after {
   background-color: #32CD32; /* Green for example blocks */
 }
 
-/* meu-tema.css */
+table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0; /* Add some margin around the table */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/*
-  Tema de cores para o código inspirado no "Nord"
-  Você pode encontrar outros temas prontos no repositório do PrismJS e adaptá-los.
-*/
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-/* Estilo geral para todos os blocos de código */
-pre[class*="language-"] {
-  background-color: var(--nord0);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Fira Code', 'Roboto Mono', monospace; /* Fira Code é ótima para ligatures */
-  font-size: 1.1em;
-  padding: 1em;
-  line-height: 1.4;
-  white-space: pre-wrap;
-}
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
 
-/* Estilos de realce de sintaxe específicos para C */
-pre[class*="language-"] code[class*="language-"] {
-  /* Cor padrão para o código */
-  color: var(--nord4);
-}
-
-/* Modificadores de cor para diferentes elementos do código */
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--nord3); /* Comentários */
-  font-style: italic;
-}
-
-.token.punctuation {
-  color: var(--nord5); /* Pontuação como chaves, parênteses, etc. */
-}
-
-.token.namespace {
-  opacity: 0.7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: var(--nord13); /* Números e constantes */
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: var(--nord14); /* Strings e palavras-chave embutidas */
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: var(--nord9); /* Operadores matemáticos e lógicos */
-}
-
-.token.atrule,
-.token.keyword,
-.token.function {
-  color: var(--nord10); /* Palavras-chave (for, if, while) e funções */
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  color: var(--nord12); /* Variáveis */
-}
-
-
-/* Estilo para a declaração de tipos em C */
-.language-c .token.keyword {
-  color: var(--nord8);
-}
-
-/* Estilo para includes e diretivas de pré-processador */
-.language-c .token.directive,
-.language-c .token.preprocessor {
-  color: var(--nord10);
-}
-
-
-
-
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Alternate row colors */
+        }
