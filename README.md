@@ -5,14 +5,33 @@ Este repositório contém todo o material de apoio para a disciplina de Estrutur
 ## Conteúdo
 
 - `/notas`: Notas de aula.
-- `/slides`: Apresentações em PDF para cada aula teórica.
-- `/implementacoes`: Códigos-fonte em C das estruturas de dados discutidas em sala.
+- `/pdf`: Apresentações em PDF para cada aula teórica.
+- `/html`: Apresentações em HTML para cada aula teórica.
+- `/code`: Códigos-fonte em C das estruturas de dados discutidas em sala.
 - `/exercicios`: Listas de exercícios práticos para fixar os conceitos.
 - `/materiais`: Artigos, links úteis e leituras recomendadas.
 
 ## Para os Alunos
 Este é um ambiente colaborativo. Sinta-se à vontade para clonar o repositório, sugerir melhorias, e usar o material para aprofundar seus estudos. Sua contribuição é bem-vinda!
 
+## Tecnologias e Ferramentas Utilizadas
+
+- [Obsidian](https://obsidian.md/)
+- [Marp](https://marp.app/)
+- [Mermaid](https://mermaid.js.org/)
+- [VS Code](https://code.visualstudio.com/)
+
+## Comandos do Marp CLI
+
+- Gerar PDF a partir do arquivo *.md
+  - marp --pdf --allow-local-files --theme-set ./themes -- arquivo.md
+- Gerar HTML a partir do arquivo *.md
+  - marp --theme-set ./themes -- arquivo.md
+
+## Sugestões e Críticas
+
+Por favor, se deseja contribuir, escreva para bruno.xavier@ufersa.edu.br.
+   
 ## Referências Bibliográficas Obrigatórias
 
 1. ASCENCIO, A. F. G. Estrutura de Dados. São Paulo: Pearson, 2011. 448p.
