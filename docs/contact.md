@@ -1,3 +1,3 @@
 layout: page
 title: "Contato"
-permalink: /about/contact/
+permalink: /estruturas-de-dados-ufersa/contact
