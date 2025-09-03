@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1280"
+   height="720"
+   overflow="hidden"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="background.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0736111"
+     inkscape:cx="779.14619"
+     inkscape:cy="360"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10"
+     showguides="false" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect1" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g10">
+    <rect
+       x="0"
+       y="0"
+       width="1280"
+       height="720"
+       fill="#FFFFFF"
+       id="rect2" />
+    <text
+       xml:space="preserve"
+       style="font-size:14.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#005095;fill-opacity:1;fill-rule:evenodd"
+       x="79.706688"
+       y="694.57697"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="79.706688"
+         y="694.57697"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14.6667px;font-family:Epilogue;-inkscape-font-specification:'Epilogue Heavy';fill:#005095;fill-opacity:1">ALGORITMOS E ESTRUTURAS DE  DADOS 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#005095;fill-opacity:1;fill-rule:evenodd"
+       x="1079.1934"
+       y="694.57703"
+       id="text10-4"><tspan
+         sodipodi:role="line"
+         id="tspan10-8"
+         x="1079.1934"
+         y="694.57703"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14.6667px;font-family:Epilogue;-inkscape-font-specification:'Epilogue Heavy';fill:#005095;fill-opacity:1">PROF. BRUNO XAVIER</tspan></text>
+  </g>
+</svg>

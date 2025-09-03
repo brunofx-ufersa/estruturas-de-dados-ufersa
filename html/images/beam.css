@@ -1,0 +1,240 @@
+/* @theme beam */
+/* Author: rnd195 https://github.com/rnd195/ */
+/* beam license - GNU GPLv3 https://github.com/rnd195/my-marp-themes/blob/live/licenses/LICENSE_beam */
+/* License of beamer which inspired this theme - GNU GPLv2 https://github.com/rnd195/my-marp-themes/blob/live/licenses/LICENSE_GPLv2 */
+
+@import "default";
+
+:root {
+  font-family: "Epilogue", "CMU Sans Serif", "Segoe UI", Helvetica, sans-serif;
+  --main: #1f38c5;
+  --secondary: #141414;
+
+  --VeryPaleOrange : rgb(255, 234, 221);
+  --LightGrayishCyan : rgb(235, 250, 249);
+  --LightGrayishBlue : rgb(237, 233, 255);
+  --Solitude : rgb(243, 246, 248);
+
+  --mediumturquoise : rgb(71, 209, 204);
+  --NeonCarrot : rgb(255, 125, 49);
+  --NeonBlue : rgb(116, 83, 250);
+  --Astronaut : rgb(62, 81, 106);
+  --PrussianBlue : rgb(0, 48, 84);
+
+}
+
+section {
+  background-image:
+    url(brasao-ufersa.png);
+  background-repeat: no-repeat;
+  background-position: right top ;
+  background-size: 5%;
+  /* Posiciona 1em da direita e 1em do topo */
+  background-position: calc(100% - 1em) 1em; 
+
+}
+
+header {
+  font-size: 0.6em;
+  /* this text-align is important */
+  text-align: right;
+  /* I don't like this absolute positioning, but it works */
+  position: absolute;
+  top: 96.2%;
+  width: 100%;
+  right: 0;
+  left: -51%;
+  color: white;
+}
+
+footer {
+  font-size: 0.6em;
+  position: absolute;
+  /* this text-align is important */
+  text-align: left;
+  top: 96.2%;
+  width: 100%;
+  right: 0;
+  left: 50.8%;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #141414;
+}
+
+/* only apply to the first occurrence of h1 */
+h1:nth-of-type(1) {
+  color: var(--PrussianBlue);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-indent: 0.5em;
+}
+
+code {
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+mark {
+  background-color: #f5db7e;
+}
+
+/* formatting page numbers  */
+section::after {
+  font-size: 0.6em;
+  /* https://github.com/yhatt/marp/issues/263 */
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  position: absolute;
+  text-align: right;
+  top: 96.2%;
+  width: 100%;
+  right: 0;
+  left: -0.5em;
+  color: white;
+}
+
+/* inline math was too large wrt text */
+.katex {
+  font: normal 1.05em KaTeX_Main, "Times New Roman", serif
+}
+
+/* the "center" keyword centers the image - may break, careful */
+/* https://github.com/marp-team/marpit/issues/141#issuecomment-473204518 */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.title-slide {
+  /* Estilos específicos para a capa, como: */
+  background-image: url(sua-imagem.png);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+/* || SECTION CLASS: title */
+/* title page - only to be used as for a single slide */
+/* <!-- _class: title --> */
+section.title>h1 {
+  font-family: "Epilogue", "CMU Bright", "Segoe UI Semibold";
+  color: #ffffff;
+  background-color: var(--main);
+  border-radius: 25px;
+  text-align: center;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-bottom: 0.2em;
+  height: auto;
+}
+
+/* remake this to be positioned with respect to h1 */
+section.title>p {
+  position: relative;
+  text-align: center;
+  top: 35px;
+}
+
+/* || SECTION CLASS: tinytext */
+/* new class that makes p, ul, and blockquote text smaller */
+/* might be useful for the References slide, use <!-- _class: tinytext --> */
+section.tinytext>p,
+section.tinytext>ul,
+section.tinytext>blockquote {
+  font-size: 0.65em;
+}
+
+.container {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    
+  }
+  
+  .leftpane {
+      width: 60%;
+      height: 80%;
+      float: left;
+      padding: 2em;
+      border-collapse: collapse;
+      display: grid;
+      align-items: center;
+      text-align: justify;
+    }
+
+  
+  .rightpane {
+    width: 30%;
+    height: 80%;
+    position: relative;
+    float: right;
+    border-collapse: collapse;
+    align-items: center;
+    text-align: justify;
+  }
+
+  
+  
+.beamer-block {
+  border: 1px solid #4682B4; /* Beamer-like blue border */
+  border-radius: 5px; /* Slightly rounded corners */
+  margin-bottom: 20px; /* Space below the block */
+  overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+.beamer-block-title {
+  background-color: #4682B4; /* Blue background for title */
+  color: white; /* White text for title */
+  padding: 10px 15px; /* Padding inside the title area */
+  margin: 0; /* Remove default margin for h3 */
+  font-size: 1.2em; /* Adjust title font size */
+}
+
+.beamer-block-content {
+  padding: 15px; /* Padding inside the content area */
+  background-color: #F0F8FF; /* Light blue background for content */
+}
+
+/* Optional: Different styles for alert or example blocks */
+.beamer-alert-block .beamer-block-title {
+  background-color: #DC143C; /* Red for alert blocks */
+}
+
+.beamer-example-block .beamer-block-title {
+  background-color: #32CD32; /* Green for example blocks */
+}
+
+section.subsection>h1 {
+  font-family: "CMU Bright", "Segoe UI Semibold";
+  color: var(--Astronaut);
+  text-align: left;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  
+}
+
+.gradient-box {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg,rgba(77, 132, 235, 1) 0%, rgba(149, 208, 232, 1) 48%, rgba(77, 132, 235, 1) 100%);
+}
+    

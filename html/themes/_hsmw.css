@@ -1,0 +1,498 @@
+/* HSMW Base Theme
+ * 
+ * @theme _hsmw
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size fhd 1920px 1080px
+ * @size 4:3 false
+ */
+
+@import "default";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:wght@200;300;400;700@display=swap');
+
+:root {
+    --hsmw-light-grey: #a6a6a6;
+    --hsmw-dark-grey: #3a3a3a;
+
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+
+}
+
+img[alt~="center"] {
+    display: block;
+    margin: 0 auto;
+}
+
+img[title~="step"] {
+    height: 64px;
+    position: relative;
+    top: -0.1em;
+    vertical-align: middle;
+    width: 64px;
+
+    &[alt="1"] {
+      view-transition-name: one;
+    }  
+  }
+
+section {
+    background: white;
+    font-family: 'Epilogue', 'Open Sans', sans-serif;
+    font-size: 22pt;
+    font-weight: 400;
+    padding: 145px 80px 68px 80px;
+    background-size: contain;
+}
+
+/* pagenumber */
+section::after {
+    color: var(--hsmw-theme-color);
+    font-size: 14pt;
+    content: attr(data-marpit-pagination);
+    position: absolute;
+    margin: 0px;
+    padding-left: 0px;
+    padding-bottom: 24px;
+    left: 80px;
+    bottom: 0px;
+}
+
+/* author, ac. degree */
+header {
+    position: absolute;
+    bottom: 29px;
+
+    margin: 0px;
+    padding: 0px;
+    text-align: end;
+    left: 130px;
+    color: var(--hsmw-theme-color);
+    font-weight: 700;
+    font-size: 10.5pt;
+    vertical-align: bottom;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* date */
+footer {
+    position: absolute;
+    color: var(--hsmw-light-grey);
+    font-size: 8pt;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+    top: auto;
+    right: auto;
+    left: 130px;
+    bottom: 16px;
+}
+
+footer::before {
+    content: "© ";
+}
+
+footer::after {
+    content: " Hochschule Mittweida";
+}
+
+h1 {
+    top: 12px;
+    position: absolute;
+    color: var(--hsmw-theme-color);
+    font-size: 48pt;
+    font-weight: 700;
+    height: 130px;
+    max-width: calc(100% - 160px);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+h1[data-auto-scaling] {
+    display: unset;
+    position: unset;
+}
+
+h2 {
+    color: var(--hsmw-theme-color);
+}
+
+h2,
+h3 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+h1>strong::after {
+    content: "\00a0";
+}
+
+li::marker {
+    color: var(--hsmw-theme-color);
+}
+
+section > video {
+    max-height: 100%;
+}
+
+section > figure {
+    margin: 0;
+    margin-bottom: 10px;
+    max-height: calc(100% - 48px);
+}
+
+section > figure.center {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    max-height: calc(100% - 48px);
+}
+
+figcaption {
+    font-size: 10.5pt;
+    color: var(--hsmw-theme-color);
+}
+
+footnote {
+    border-top: 0.1em solid #555;
+    border-left: 0;
+    font-size: 60%;
+    margin-top: auto;
+}
+footnote > ol {
+  margin-bottom:0;
+}
+
+section > div.multicolumn,
+section.multicolumn
+{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+}
+
+section.multicolumn > h1 {
+    margin-left: 80px;
+}
+
+/* ################ Title ################ */
+section.title {
+    padding-left: 80px;
+}
+
+section.title>h1 {
+    position: absolute;
+    top: 34%;
+    margin: 0px;
+    height: 28%;
+
+    padding: 0px;
+    font-size: 60pt;
+    line-height: normal;
+    color: var(--hsmw-theme-color);
+    font-weight: 700;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+section.title>h2 {
+    position: absolute;
+    top: 65.27%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 32pt;
+    color: var(--hsmw-theme-color);
+    font-weight: 700;
+}
+
+section.title::after {
+    opacity: 0;
+}
+
+/* Autor, Akad. Grad */
+section.title>header {
+    position: absolute;
+    bottom: 140px;
+    margin: 0px;
+    padding: 0px;
+    left: 80px;
+    font-size: 20pt;
+    color: var(--hsmw-dark-grey);
+    font-weight: 200;
+}
+
+section.title>footer {
+    opacity: 0;
+}
+
+/* ################ Chapter ################ */
+section.chapter {
+    padding-left: 80px;
+    background-image: none;
+    background-color: var(--hsmw-theme-color);
+}
+
+/* Autor, Akad. Grad */
+section.chapter>header {
+    opacity: 0;
+}
+
+/* Datum */
+section.chapter>footer {
+    opacity: 0;
+}
+
+section.chapter>h1 {
+    top: 38px;
+    position: absolute;
+    color: white;
+    font-size: 64pt;
+    font-weight: 700;
+    height: 47.5%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+section.chapter>h1::after {
+    background: none repeat scroll 0 0 white;
+    bottom: 10px;
+    left: -50px;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 200px;
+}
+
+section.chapter>h2 {
+    position: absolute;
+    top: 52.7%;
+    color: white;
+    font-size: 32pt;
+    font-weight: 700;
+}
+
+/* ################ Agenda ################ */
+
+section.agenda {
+    padding-left: 430px;
+    padding-top: 60px;
+    font-size: 24pt;
+    flex-flow: nowrap;
+}
+
+/*
+section.agenda::before {
+    position: absolute;
+    
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    padding-top: 30px;
+    
+    width: 33.35%;
+    height: 86.11%;
+
+    text-align: center;
+    font-size: 48pt;
+    font-weight: 700;
+
+    color: white;
+    background-color: var(--hsmw-theme-color);
+    content: "Agenda"
+    
+}
+*/
+
+/* ################ Vielen Dank ################ */
+section.end {
+    color: white;
+    padding-right: 515px;
+    padding-left: 90px;
+    padding-top: 185px;
+    font-size: 14pt;
+    --color-accent-fg: white;
+    /* white link color */
+}
+
+section.end>h1 {
+    color: white;
+    font-size: 60pt;
+    height: 152px;
+    align-items: flex-end;
+}
+
+
+/* no footer */
+section.end::after,
+section.end>header,
+section.end>footer {
+    visibility: hidden;
+}
+
+/* ################ Total Pages ################ */
+
+section.totalpages::after {
+    color: var(--hsmw-theme-color);
+    font-size: 14pt;
+    content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+    position: absolute;
+    padding: 0px;
+    padding-bottom: 24px;
+    left: 10px;
+    width: 100px;
+    margin: 0px;
+}
+
+
+/* ########### Callouts ############ */
+
+.beamer-block {
+  border: 1px solid #4682B4; /* Beamer-like blue border */
+  border-radius: 5px; /* Slightly rounded corners */
+  margin-bottom: 20px; /* Space below the block */
+  overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+.beamer-block-title {
+  background-color: #4682B4; /* Blue background for title */
+  color: white; /* White text for title */
+  padding: 10px 15px; /* Padding inside the title area */
+  margin: 0; /* Remove default margin for h3 */
+  font-size: 1.2em; /* Adjust title font size */
+}
+
+.beamer-block-content {
+  padding: 15px; /* Padding inside the content area */
+  background-color: #F0F8FF; /* Light blue background for content */
+}
+
+/* Optional: Different styles for alert or example blocks */
+.beamer-alert-block .beamer-block-title {
+  background-color: #DC143C; /* Red for alert blocks */
+}
+
+.beamer-example-block .beamer-block-title {
+  background-color: #32CD32; /* Green for example blocks */
+}
+
+/* meu-tema.css */
+
+/*
+  Tema de cores para o código inspirado no "Nord"
+  Você pode encontrar outros temas prontos no repositório do PrismJS e adaptá-los.
+*/
+
+/* Estilo geral para todos os blocos de código */
+pre[class*="language-"] {
+  background-color: var(--nord0);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Fira Code', 'Roboto Mono', monospace; /* Fira Code é ótima para ligatures */
+  font-size: 1.1em;
+  padding: 1em;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+/* Estilos de realce de sintaxe específicos para C */
+pre[class*="language-"] code[class*="language-"] {
+  /* Cor padrão para o código */
+  color: var(--nord4);
+}
+
+/* Modificadores de cor para diferentes elementos do código */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--nord3); /* Comentários */
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: var(--nord5); /* Pontuação como chaves, parênteses, etc. */
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--nord13); /* Números e constantes */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--nord14); /* Strings e palavras-chave embutidas */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--nord9); /* Operadores matemáticos e lógicos */
+}
+
+.token.atrule,
+.token.keyword,
+.token.function {
+  color: var(--nord10); /* Palavras-chave (for, if, while) e funções */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--nord12); /* Variáveis */
+}
+
+
+/* Estilo para a declaração de tipos em C */
+.language-c .token.keyword {
+  color: var(--nord8);
+}
+
+/* Estilo para includes e diretivas de pré-processador */
+.language-c .token.directive,
+.language-c .token.preprocessor {
+  color: var(--nord10);
+}
+
+
+
+

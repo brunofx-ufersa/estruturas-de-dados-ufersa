@@ -1,0 +1,61 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    circle {
+      fill: lightblue;
+      transition: fill 0.5s;
+    }
+
+    /* Cada nó pisca em sequência */
+    #n1 { animation: highlight 6s infinite; animation-delay: 0s; }
+    #n2 { animation: highlight 6s infinite; animation-delay: 1s; }
+    #n4 { animation: highlight 6s infinite; animation-delay: 2s; }
+    #n5 { animation: highlight 6s infinite; animation-delay: 3s; }
+    #n3 { animation: highlight 6s infinite; animation-delay: 4s; }
+    #n6 { animation: highlight 6s infinite; animation-delay: 5s; }
+
+    @keyframes highlight {
+      0%   { fill: red; }
+      20%  { fill: lightblue; }
+      100% { fill: lightblue; }
+    }
+  </style>
+
+  <!-- Ligações -->
+  <line x1="250" y1="40" x2="150" y2="120" stroke="black" />
+  <line x1="250" y1="40" x2="350" y2="120" stroke="black" />
+  <line x1="150" y1="120" x2="100" y2="200" stroke="black" />
+  <line x1="150" y1="120" x2="200" y2="200" stroke="black" />
+  <line x1="350" y1="120" x2="400" y2="200" stroke="black" />
+
+  <!-- Nós -->
+  <g>
+    <circle id="n1" cx="250" cy="40" r="20" />
+    <text x="250" y="45" text-anchor="middle"></text>
+  </g>
+
+  <g>
+    <circle id="n2" cx="150" cy="120" r="20" />
+    <text x="150" y="125" text-anchor="middle"></text>
+  </g>
+
+  <g>
+    <circle id="n3" cx="350" cy="120" r="20" />
+    <text x="350" y="125" text-anchor="middle"></text>
+  </g>
+
+  <g>
+    <circle id="n4" cx="100" cy="200" r="20" />
+    <text x="100" y="205" text-anchor="middle"></text>
+  </g>
+
+  <g>
+    <circle id="n5" cx="200" cy="200" r="20" />
+    <text x="200" y="205" text-anchor="middle"></text>
+  </g>
+
+  <g>
+    <circle id="n6" cx="400" cy="200" r="20" />
+    <text x="400" y="205" text-anchor="middle"></text>
+  </g>
+</svg>

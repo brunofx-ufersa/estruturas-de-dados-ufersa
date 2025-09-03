@@ -1,0 +1,23 @@
+/* @theme hsmw-inw */
+
+@import "_hsmw";
+
+:root {
+    --hsmw-theme-color: #005095;
+}
+
+section {
+        background-image: url(images/background.svg);
+}
+
+section.title {
+    background-image: url(images/titlepage.svg);
+}
+
+section.agenda {
+    background-image: url(images/agenda.svg);
+}
+
+section.end {
+    background-image: url(images/endpage.svg);
+}
