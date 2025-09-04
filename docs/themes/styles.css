@@ -1,0 +1,188 @@
+/* === Reset e base === */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-bottom: 60px; /* espaço para o footer fixo */
+    color: #333;
+}
+
+/* === Estrutura principal === */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    }
+
+   #home {
+    background: 
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("images/diff.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* === Títulos === */
+main h1,
+h1 {
+    font-size: 2rem;
+    color: #004080;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #005099;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* === Parágrafos e listas === */
+main p {
+    margin-bottom: 20px;
+}
+
+main ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+main ol li {
+    margin-bottom: 10px;
+}
+
+main ul,
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+main ul li,
+li {
+    margin: 10px 0;
+}
+
+/* === Destaques === */
+main strong {
+    color: #00264d;
+}
+
+/* === Links === */
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Header e menu === */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 8px 20px;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgba(0, 64, 128, 0.5); /* azul semitransparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px); /* efeito blur atrás do menu */
+}
+
+header nav ul li a {
+    color: #e0e7ff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+header nav ul li a:hover {
+    background-color: #a0b8ff;
+    color: #003366;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(160, 184, 255, 0.5);
+    text-decoration: none; /* remove o sublinhado no hover */
+}
+
+
+header nav ul li a.active {
+    background-color: #1e40af;
+    color: #fff;
+    box-shadow: 0 0 10px #1e40afaa;
+    cursor: default;
+    pointer-events: none; /* desativa clique no link ativo */
+}
+
+/* === Footer === */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #e0e0e0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.bibliografia {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bibliografia li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.capa-livro {
+  width: 80px;
+  height: auto;
+  margin-right: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.unidade-conteudo {
+  display: flex;
+  gap: 40px; /* espaço entre as colunas */
+  align-items: flex-start; /* alinha no topo */
+  margin-bottom: 30px; /* espaço entre unidades */
+}
+
+.aulas, .exercicios {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.aulas {
+  flex: 3; /* ocupa maior espaço */
+}
+
+.exercicios {
+  flex: 1; /* coluna mais estreita */
+  background-color: #f0f8ff; /* um leve fundo para destacar */
+  border: 1px solid #cce0ff;
+  border-radius: 6px;
+  padding: 15px;
+}
