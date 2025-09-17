@@ -2,5 +2,6 @@
   "markdown.marp.themes": [
     "./themes/_hsmw.css",
     "./themes/hsmw-inw.css"
-  ]
+  ],
+  "markdown.marp.html": "default",
 }
