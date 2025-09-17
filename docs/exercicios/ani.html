@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotação AVL com Subárvores em Fila</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    circle {
+      fill: steelblue;
+      stroke: black;
+      stroke-width: 2px;
+    }
+
+    text {
+      fill: white;
+      font-size: 16px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    polygon {
+      stroke: black;
+      stroke-width: 1.5px;
+    }
+
+    line {
+      stroke: black;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+<svg width="800" height="400"></svg>
+
+<script>
+  const svg = d3.select("svg");
+
+  const edgeLength = 100;
+  const offset = edgeLength * Math.cos(Math.PI / 4); // cos(45°) ≈ 0.7071
+
+  // Fila de espera para subárvores
+  const waitingLineY = 320;
+  const waitingX = {
+    S1: 200,
+    S2: 300,
+    S3: 400
+  };
+
+  // Posições iniciais
+  const pos = {
+    A: { x: 250, y: 200 },
+    B: { x: 350, y: 120 }
+  };
+
+  function calcSubtreePositions(A, B) {
+    return {
+      S1: { x: A.x - offset, y: A.y + offset },
+      S2: { x: A.x + offset, y: A.y + offset },
+      S3: { x: B.x + offset, y: B.y + offset }
+    };
+  }
+
+  let current = {
+    A: { ...pos.A },
+    B: { ...pos.B },
+    ...calcSubtreePositions(pos.A, pos.B)
+  };
+
+  const colors = {
+    S1: "orange",
+    S2: "green",
+    S3: "purple"
+  };
+
+  function createTriangle(x, y) {
+    const size = 20;
+    return [
+      [x, y],
+      [x - size, y + size],
+      [x + size, y + size]
+    ];
+  }
+
+  // Criar nós
+  const nodes = {
+    A: svg.append("g"),
+    B: svg.append("g")
+  };
+
+  // Criar subárvores
+  const subtrees = {};
+  ["S1", "S2", "S3"].forEach(key => {
+    subtrees[key] = svg.append("polygon")
+      .attr("points", createTriangle(current[key].x, current[key].y))
+      .attr("fill", colors[key]);
+  });
+
+  // Criar nós A e B
+  nodes.A.append("circle").attr("r", 20).attr("cx", current.A.x).attr("cy", current.A.y);
+  nodes.A.append("text").attr("x", current.A.x).attr("y", current.A.y).text("A");
+
+  nodes.B.append("circle").attr("r", 20).attr("cx", current.B.x).attr("cy", current.B.y);
+  nodes.B.append("text").attr("x", current.B.x).attr("y", current.B.y).text("B");
+
+  // Criar arestas
+  const edges = {
+    BA: svg.append("line"),
+    AS1: svg.append("line"),
+    AS2: svg.append("line"),
+    BS3: svg.append("line"),
+    BS2: svg.append("line").style("opacity", 0) // nova aresta B → S2
+  };
+
+  function updateEdge(edge, from, to) {
+    edge
+      .attr("x1", from.x)
+      .attr("y1", from.y)
+      .attr("x2", to.x)
+      .attr("y2", to.y);
+  }
+
+  // Arestas iniciais
+  updateEdge(edges.BA, current.B, current.A);
+  updateEdge(edges.AS1, current.A, current.S1);
+  updateEdge(edges.AS2, current.A, current.S2);
+  updateEdge(edges.BS3, current.B, current.S3);
+
+  // ----------------------------------------
+  // FASE 2 - Desconectar subárvores e mover para fila
+  // ----------------------------------------
+  setTimeout(() => {
+    edges.AS1.transition().duration(500).style("opacity", 0);
+    edges.AS2.transition().duration(500).style("opacity", 0);
+    edges.BS3.transition().duration(500).style("opacity", 0);
+
+    // Mover S1 e S3 para linha de reserva
+    subtrees.S1.transition().duration(800)
+      .attr("points", createTriangle(waitingX.S1, waitingLineY));
+
+    subtrees.S3.transition().duration(800)
+      .attr("points", createTriangle(waitingX.S3, waitingLineY));
+
+    // Atualizar posições internas (S2 fica parada)
+    current.S1 = { x: waitingX.S1, y: waitingLineY };
+    current.S3 = { x: waitingX.S3, y: waitingLineY };
+
+  }, 1000);
+
+  // ----------------------------------------
+  // FASE 3 - Rotacionar A e B
+  // ----------------------------------------
+  setTimeout(() => {
+    current.A = { x: 300, y: 120 };
+    current.B = { x: 370, y: 200 };
+
+    nodes.A.select("circle").transition().duration(1000)
+      .attr("cx", current.A.x).attr("cy", current.A.y);
+    nodes.A.select("text").transition().duration(1000)
+      .attr("x", current.A.x).attr("y", current.A.y);
+
+    nodes.B.select("circle").transition().duration(1000)
+      .attr("cx", current.B.x).attr("cy", current.B.y);
+    nodes.B.select("text").transition().duration(1000)
+      .attr("x", current.B.x).attr("y", current.B.y);
+
+    // Atualizar aresta B → A
+    edges.BA.transition().duration(1000)
+      .attr("x1", current.A.x).attr("y1", current.A.y)
+      .attr("x2", current.B.x).attr("y2", current.B.y);
+
+  }, 2000);
+
+  // ----------------------------------------
+  // FASE 4 - Reposicionar S1 e S3 (S2 permanece)
+  // ----------------------------------------
+  setTimeout(() => {
+    const newSubtrees = calcSubtreePositions(current.A, current.B);
+    current.S1 = newSubtrees.S1;
+    current.S3 = newSubtrees.S3;
+    // S2 permanece no mesmo lugar (já está como filho esquerdo de B)
+
+    subtrees.S1.transition().duration(800)
+      .attr("points", createTriangle(current.S1.x, current.S1.y));
+
+    subtrees.S3.transition().duration(800)
+      .attr("points", createTriangle(current.S3.x, current.S3.y));
+  }, 3200);
+
+  // ----------------------------------------
+  // FASE 5 - Reaparecer arestas
+  // ----------------------------------------
+  setTimeout(() => {
+    updateEdge(edges.AS1, current.A, current.S1);
+    updateEdge(edges.BS2, current.B, current.S2);
+    updateEdge(edges.BS3, current.B, current.S3);
+
+    edges.AS1.transition().duration(500).style("opacity", 1);
+    edges.BS2.transition().duration(500).style("opacity", 1);
+    edges.BS3.transition().duration(500).style("opacity", 1);
+  }, 4200);
+</script>
+</body>
+</html>
