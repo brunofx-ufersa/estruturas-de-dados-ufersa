@@ -3,5 +3,5 @@
     "./themes/_hsmw.css",
     "./themes/hsmw-inw.css"
   ],
-  "markdown.marp.html": "default",
+  "markdown.marp.html": "default"
 }

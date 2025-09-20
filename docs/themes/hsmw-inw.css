@@ -7,17 +7,17 @@
 }
 
 section {
-        background-image: url(images/background.svg);
+        background-image: url(../img/background.svg);
 }
 
 section.title {
-    background-image: url(images/titlepage.svg);
+    background-image: url(../img/titlepage.svg);
 }
 
 section.agenda {
-    background-image: url(images/agenda.svg);
+    background-image: url(../img/agenda.svg);
 }
 
 section.end {
-    background-image: url(images/endpage.svg);
+    background-image: url(../img/endpage.svg);
 }
